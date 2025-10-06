@@ -16,12 +16,19 @@ export function processWord(word, ignoredCharacted) {
   if (!/^[а-яА-Яa-zA-Z]*$/.test(word)) {
     throw new Error("Слово содержит небуквенные символы");
   }
+  const pon = ignoredCharacted.toLowerCase() 
 
-  if (!word.includes(ignoredCharacted)) {
-    return word;
-  }
+  // if (!word.includes(ignoredCharacted)) {
+  //   return word;
+  //}
 
   let result = "";
+  for (let i = 0; i < word.length; i++) {     
+    const mew = word[i]
+   if (mew.toLowerCase()!== pon) {
+    result += mew
+   }
+  }
 
   // TODO
 
