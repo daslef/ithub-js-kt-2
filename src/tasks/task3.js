@@ -10,19 +10,21 @@ export function renderLadder(height) {
 
   const h = Number(height);
 
-  if (h < 0) {
-    throw new Error("Некорректные входные данные");
-  }
+  if (isNaN(h) || h < 0 || !Number.isInteger(h)) {
+  throw new Error("Некорректные входные данные");
+ }
 
-  if (h === 0) {
-    return "";
-  }
-
-  if (h === 1) {
-    return "1";
-  }
+ if (h === 0) {
+  return ""
+ }
 
   let result = "";
+  for (let i = 1; i <= h; i++) {
+    for (let g = 1; g <= i; g++) {
+      result += g
+    }
+    result += "\n"
+  }
 
-  return result;
+  return result.trim()
 }
