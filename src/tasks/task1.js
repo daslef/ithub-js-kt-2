@@ -17,13 +17,19 @@ export function processWord(word, ignoredCharacted) {
     throw new Error("Слово содержит небуквенные символы");
   }
 
-  if (!word.includes(ignoredCharacted)) {
-    return word;
-  }
+  const bebebe = ignoredCharacted.toLowerCase()
+
+  // if (!word.includes(ignoredCharacted)) {
+  //   return word;
+  // }
 
   let result = "";
-
-  // TODO
+  for (let i = 0; i < word.length; i++) {
+    const j = word[i]
+    if (j.toLowerCase() !== bebebe) {
+      result += j
+    }
+  }
 
   return result;
 }
