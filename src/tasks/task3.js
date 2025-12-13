@@ -24,12 +24,5 @@ export function renderLadder(height) {
 
   let result = "";
 
-  for (let i = 1; i <= h; i++) {
-    result += Array.from({ length: i }, (_, j) => j + 1).join('');
-    if (i < h) {
-      result += '\n';
-    }
-  }
-
   return result;
 }
