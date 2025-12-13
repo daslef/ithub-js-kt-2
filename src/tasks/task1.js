@@ -23,11 +23,5 @@ export function processWord(word, ignoredCharacted) {
 
   let result = "";
 
-  // for (let char of word) {
-  //   if (char !== ignoredCharacted) {
-  //     result += char;
-  //   }
-  // }
-
   return result;
 }
