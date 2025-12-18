@@ -6,22 +6,27 @@
  */
 export function processWord(word, ignoredCharacted) {
   if (word === null) {
-    throw new Error("Некорректное слово");
+      throw new Error("Некорректное слово");
   }
 
   if (ignoredCharacted === null) {
-    throw new Error("Не указан игнорируемый символ");
+      throw new Error("Не указан игнорируемый символ");
   }
 
   if (!/^[а-яА-Яa-zA-Z]*$/.test(word)) {
-    throw new Error("Слово содержит небуквенные символы");
+      throw new Error("Слово содержит небуквенные символы");
   }
 
   if (!word.includes(ignoredCharacted)) {
-    return word;
+      return word;
   }
 
   let result = "";
 
+  for (let char of word) {
+      if (char !== ignoredCharacted) {
+          result += char;
+      }
+  }
   return result;
 }
