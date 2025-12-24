@@ -4,14 +4,13 @@
  * @description Проверка слова на палиндром
  */
 export function isPalindrome(word) {
-    if (word === null) {
-      throw new Error("Некорректное слово");
-    }
-  
-    const normalized = word.toLowerCase(); 
-    const reversed = normalized.split('').reverse().join(''); 
-  
-    const result = normalized === reversed;
-
-    return result;
+  if (word === null) {
+    throw new Error("Некорректное слово");
   }
+  const normalized = word.toLowerCase();
+  let reversed = '';
+  for (let i = normalized.length - 1; i >= 0; i--) {
+    reversed += normalized[i];
+  }
+  return normalized === reversed;
+}
