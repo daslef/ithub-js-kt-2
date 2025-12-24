@@ -2,7 +2,8 @@
  * @param {string} word - Исходное слово
  * @param {string} ignoredCharacted - Игнорируемый символ
  * @returns {string} Новая строка без указанного символа
- * @description Формирование новой строки без указанного символа
+ * @description Формирование новой строки без указанного символа.
+ *              Работает при единственном и множественных вхождениях игнорируемого символа.
  */
 export function processWord(word, ignoredCharacted) {
   if (word === null) {
@@ -22,8 +23,11 @@ export function processWord(word, ignoredCharacted) {
   }
 
   let result = "";
-
-  // TODO
-
+  for (let i = 0; i < word.length; i++) {
+    if (word[i] !== ignoredCharacted) {
+      result += word[i];
+    }
+  }
+  
   return result;
 }
